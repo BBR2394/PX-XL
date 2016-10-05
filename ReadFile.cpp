@@ -11,6 +11,12 @@ ReadFile::~ReadFile()
 
 }
 
+/*void ReadFile::detectFormat()
+{
+
+
+}*/
+
 void ReadFile::readTheFile(unsigned int coef)
 {
     if (_theFileInChar[0] == 0x42 && _theFileInChar[1] == 0x4D)

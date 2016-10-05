@@ -1,6 +1,7 @@
 
 CXX		=	g++
-CXXFLAGS	=	-std=c++11
+CXXFLAGS	=	-std=c++11	\
+			-lpng -L /usr/local/lib/
 
 SRC	=	main.cpp		\
 		ReadFile.cpp		\
@@ -12,7 +13,7 @@ OBJ	=	$(SRC:.cpp=.o)
 
 NAME	=	PX-XL
 
-LFLAGS	=	
+LFLAGS	=	-lpng -L /usr/local/lib/
 
 all: $(NAME)
 
