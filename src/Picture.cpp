@@ -8,7 +8,7 @@
 // Last update Thu Jun 18 15:39:24 2015 Bertrand-Rapello Baptiste
 //
 
-#include "Picture.hh"
+#include "../includes/Picture.hh"
 
 Picture::Picture() : _width(-1), _height(-1), _fileFormat(Picture::NOFORMAT)
 {

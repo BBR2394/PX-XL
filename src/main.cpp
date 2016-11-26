@@ -10,9 +10,9 @@
 
 #include <iostream>
 
-#include "ReadFile.hh"
-#include "Picture.hh"
-#include "BMP.hh"
+#include "../includes/ReadFile.hh"
+#include "../includes/Picture.hh"
+#include "../includes/BMP.hh"
 
 int	main(int ac, char **av)
 {
@@ -28,6 +28,7 @@ int	main(int ac, char **av)
   }
 
   rf.work(av[1], 3);
+ 
   //bmp.createTheFile();
   //bmp.writeTheFile();
   return 0;

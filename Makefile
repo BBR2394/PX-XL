@@ -3,11 +3,11 @@ CXX		=	g++
 CXXFLAGS	=	-std=c++11	\
 			-lpng -L /usr/local/lib/
 
-SRC	=	main.cpp		\
-		ReadFile.cpp		\
-		Picture.cpp		\
-		BMP.cpp			\
-		Pixel.cpp
+SRC	=	src/main.cpp			\
+		src/ReadFile.cpp		\
+		src/Picture.cpp			\
+		src/BMP.cpp			\
+		src/Pixel.cpp
 
 OBJ	=	$(SRC:.cpp=.o)
 

@@ -1,5 +1,5 @@
 
-#include "Pixel.hh"
+#include "../includes/Pixel.hh"
 
 Pixel::Pixel()
 {

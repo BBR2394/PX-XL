@@ -1,5 +1,5 @@
 
-#include "BMP.hh"
+#include "../includes/BMP.hh"
 
 BMP::BMP() : Picture()
 {
