@@ -32,7 +32,8 @@ void ReadFile::work(std::string name, unsigned int coef)
 {
 	std::streampos size;;
 	_theFile.open(name.c_str(), std::ios::in|std::ios::binary|std::ios::ate);
-
+    std::ofstream myFile ("cpy.bmp", std::ios::out | std::ios::binary);
+    
 	if (_theFile.is_open())
 	{
 		size = _theFile.tellg();
@@ -42,9 +43,15 @@ void ReadFile::work(std::string name, unsigned int coef)
     	_theFile.seekg (0, std::ios::beg);
 
     	std::cout << "the entire file content is in memory" << std::endl;
-    	readTheFile(coef);
-    	std::cout << _theFileInChar << std::endl;
+    	//readTheFile(coef);
+        for (int i = 0; i < size; i++)
+        {
+    	   std::cout << (int)_theFileInChar[i] << "; ";
+           if (i % 16 == 0)
+            std::cout << std::endl;
+        }
     	_theFile.close();
+        myFile.write (_theFileInChar, size);
     	delete[] _theFileInChar;
 	}	
 }
