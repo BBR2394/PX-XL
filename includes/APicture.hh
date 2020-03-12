@@ -15,24 +15,18 @@
 #include <fstream>
 #include <list>
 
+# include "IPicture.h"
+# include "enum_picture.h"
 # include "Pixel.hh"
 
-class Picture
+class APicture : public IPicture
 {
 public:
-
-  enum FORMAT
-    {
-      NOFORMAT,
-      BMP,
-      TIFF
-    };
-  
-  Picture();
-  Picture(int w, int h, FORMAT);
-  Picture(const Picture &);
-  ~Picture();
-  Picture &operator=(Picture const &);
+  APicture();
+  APicture(int w, int h, FORMAT);
+  APicture(const APicture &);
+  ~APicture();
+  APicture &operator=(APicture const &);
   
 protected:
   int _width; //largeur
@@ -55,9 +49,10 @@ public:
   virtual void createTheFile() = 0;
   virtual void writeTheFile() = 0;
   virtual void getThePicture(std::ifstream &, unsigned int) = 0;
+  virtual void getPicture(char *, unsigned int) = 0;
   virtual void setDataFromFile(unsigned int) = 0;
 };
   
-std::ostream& operator<<(std::ostream&, Picture const &);
-  
+std::ostream& operator<<(std::ostream&, APicture const &);
+
 #endif

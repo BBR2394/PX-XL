@@ -5,7 +5,7 @@
 # include <iostream>
 # include <fstream>
 
-# include "Picture.hh"
+# include "APicture.hh"
 # include "BMP.hh"
 
 class ReadFile
@@ -15,7 +15,7 @@ public:
 	~ReadFile();
 
 private:
-	Picture		*_pict;
+	APicture	*_pict;
 	std::string	 _fileName;
 	char		*_theFileInChar;
 	std::ifstream _theFile;

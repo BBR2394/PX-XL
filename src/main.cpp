@@ -11,13 +11,17 @@
 #include <iostream>
 
 #include "../includes/ReadFile.hh"
-#include "../includes/Picture.hh"
+#include "../includes/APicture.hh"
 #include "../includes/BMP.hh"
+#include "../includes/CSV.hh"
+#include "../includes/Test.hh"
 
 int	main(int ac, char **av)
 {
+  TestPXXL test;
   BMP bmp(64, 64);
   ReadFile rf;
+  int coefOfElargement = 3;
 
   //std::cout << bmp << std::endl;  
   if (ac <= 1)
@@ -27,7 +31,7 @@ int	main(int ac, char **av)
   	return -1;
   }
 
-  rf.work(av[1], 3);
+  rf.work(av[1], coefOfElargement);
  
   //bmp.createTheFile();
   //bmp.writeTheFile();

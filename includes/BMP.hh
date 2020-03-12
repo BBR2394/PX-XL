@@ -4,7 +4,7 @@
 
 #include <cstdint>
 
-#include "Picture.hh"
+#include "APicture.hh"
 
 typedef struct  __attribute__((packed)) s_bmp_header
 {
@@ -30,7 +30,7 @@ typedef struct  __attribute__((packed)) s_bmp_info_header
   uint32_t      important_colors;
 }               t_bmp_info_header;
 
-class BMP : public Picture
+class BMP : public APicture
 {
 public:
 	BMP();
@@ -46,7 +46,8 @@ public:
 	void createTheFile();
 	void writeTheFile();
 	void getThePicture(std::ifstream &, unsigned int);
-	void setDataFromFile(unsigned int);
+	void getPicture(char *, unsigned int);
+  void setDataFromFile(unsigned int);
 };
 
 //std::ostream& operator<<(std::ostream&, BMP const &);

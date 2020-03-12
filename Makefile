@@ -4,9 +4,11 @@ CXXFLAGS	=	-std=c++11	\
 			-lpng -L /usr/local/lib/
 
 SRC	=	src/main.cpp			\
+		src/Test.cpp			\
 		src/ReadFile.cpp		\
-		src/Picture.cpp			\
+		src/APicture.cpp		\
 		src/BMP.cpp			\
+		src/CSV.cpp			\
 		src/Pixel.cpp
 
 OBJ	=	$(SRC:.cpp=.o)

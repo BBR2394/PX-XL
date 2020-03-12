@@ -1,17 +1,17 @@
 
 #include "../includes/BMP.hh"
 
-BMP::BMP() : Picture()
+BMP::BMP() : APicture()
 {
-	_fileFormat = Picture::BMP;
+	_fileFormat = eBMP;
 }
 
-BMP::BMP(int w, int h) : Picture(w, h, Picture::BMP)
+BMP::BMP(int w, int h) : APicture(w, h, eBMP)
 {
 
 }
 
-BMP::BMP(const BMP &pict) : Picture(pict)
+BMP::BMP(const BMP &pict) : APicture(pict)
 {
 
 }
@@ -133,4 +133,24 @@ void BMP::getThePicture(std::ifstream &theFile, unsigned int coef)
 	std::cout << "la liste a une taille de : " << _thePixels.size() << " et le c : " << c  << std::endl;
 	//c'est juste pour tester que je lise bien et c'est bon 
 	writeTheFile();
+}
+
+static unsigned char *convertFileData(char *tab)
+{
+	// for (int i = 0; i < 14; i++)
+	// {
+
+	// }
+	return NULL;
+}
+
+void BMP::getPicture(char *fileInCharTab, unsigned int coef)
+{
+	// unsigned char *tabcpy;
+	// convertFileData(fileInCharTab);
+	// tabcpy = new unsigned char;
+	// theFile.read((char*)&_bmpHeader, sizeof(t_bmp_header));
+	// theFile.read((char*)&_bmpInfoHeader, sizeof(t_bmp_info_header));
+	// setDataFromFile(coef);
+
 }

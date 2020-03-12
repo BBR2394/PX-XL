@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <png.h>
 
-#include "Picture.hh"
+#include "APicture.hh"
 
 class PNG : public Picture
 {
