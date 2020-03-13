@@ -3,6 +3,12 @@
 
 #include <iostream>
 
+#include "../includes/ReadFile.hh"
+#include "../includes/APicture.hh"
+#include "../includes/BMP.hh"
+#include "../includes/CSV.hh"
+#include "../includes/Test.hh"
+
 class TestPXXL
 {
 public:

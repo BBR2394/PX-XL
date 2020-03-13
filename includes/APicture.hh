@@ -15,6 +15,8 @@
 #include <fstream>
 #include <list>
 
+# include "color_term_macro.h"
+
 # include "IPicture.h"
 # include "enum_picture.h"
 # include "Pixel.hh"
@@ -29,13 +31,13 @@ public:
   APicture &operator=(APicture const &);
   
 protected:
-  int _width; //largeur
-  int _height; //hauteur
-  FORMAT _fileFormat;
-  std::string _fileName;
-  std::ofstream _theFile;
+  int               _width; //largeur
+  int               _height; //hauteur
+  FORMAT            _fileFormat;
+  std::string       _fileName;
+  std::ofstream     _theFile;
   std::list<Pixel*> _thePixels;
-  unsigned int _coefMult;
+  unsigned int      _coefMult;
   
 public:
   void setWidth(int w);

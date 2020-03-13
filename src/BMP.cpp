@@ -11,7 +11,7 @@ BMP::BMP(int w, int h) : APicture(w, h, eBMP)
 
 }
 
-BMP::BMP(const BMP &pict) : APicture(pict)
+BMP::BMP(const APicture &pict) : APicture(pict)
 {
 
 }
@@ -131,7 +131,7 @@ void BMP::getThePicture(std::ifstream &theFile, unsigned int coef)
 			c += 1;
 		}
 	std::cout << "la liste a une taille de : " << _thePixels.size() << " et le c : " << c  << std::endl;
-	//c'est juste pour tester que je lise bien et c'est bon 
+	//up 2020-03-13 c'est juste pour tester ce que je lie est bien et c'est bon 
 	writeTheFile();
 }
 

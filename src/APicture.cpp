@@ -75,8 +75,12 @@ std::ostream & operator<<(std::ostream & os, APicture const & pict)
 	if (pict.getFileFormat() == eNOFORMAT)
 		os << " no format set yet" ;
 	else if (pict.getFileFormat() == eBMP)
-		os << "BMP" ;
+		os << RED << "BMP" << RST;
 	else if (pict.getFileFormat() == eTIFF)
-		os << "TIFF" ;
+		os << GREEN << "TIFF" << RST;
+	else if (pict.getFileFormat() == eCSV)
+		os << YELLOW << "CSV" << RST;
+	else
+		os << "\x1B[41m\x1B[97m\x1B[05m!!!\x1B[25mUNDEFINED FORMAT SOMETHING IS MISSING\x1B[0m";
 	return os;
 }

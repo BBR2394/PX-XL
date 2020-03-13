@@ -17,6 +17,28 @@ ReadFile::~ReadFile()
 
 }*/
 
+APicture    *ReadFile::getThePictStored()
+{
+    return _pict;
+}
+
+int ReadFile::askTheFormat()
+{
+    std::string input;
+    std::cout << BRTMAGENTA << "We didn't detect the format of your file,\nplease enter which file it is ['CSV','BMP']\n" << RST << std::endl;
+    std::cin >> input ;
+    std::cout << YELLOW << "input is : " << input << RST << std::endl;
+    
+    if (input == "CSV") {
+        _pict = new CSV;
+    }
+    else {
+        std::cout << BLINK << BRTWHITE << BRTBKGRED << "!!!" << STOPBLINK <<  "unrecognized file format, it is going to crash :-/ " << RST << std::endl;
+    }
+
+    return 0;
+}
+
 void ReadFile::readTheFile(unsigned int coef)
 {
     std::cout << "dans read teh file :\n ";
@@ -28,10 +50,13 @@ void ReadFile::readTheFile(unsigned int coef)
     if (_theFileInChar[0] == 0x42 && _theFileInChar[1] == 0x4D)
         _pict = new BMP;
     else
-        std::cout << "il y a eu un probleme lors de la lecture du magic number" << std::endl;
+    {
+        std::cout << BLINK << BRTWHITE << BRTBKGRED << "!!!" << STOPBLINK <<  "il y a eu un probleme lors de la lecture du magic number et ca risque de planter " << RST << std::endl;
+        this->askTheFormat();
+    }
 
-    //_pict->getThePicture(_theFile, coef);
-    std::cout << *_pict << std::endl;
+    _pict->getThePicture(_theFile, coef);
+    std::cout << "\x1B[96m\x1B[104mThe pict store in memory in a APicture object\n\x1B[0m\x1B[49m" << *_pict << std::endl;
 }
 
 void ReadFile::work(std::string name, unsigned int coef)
@@ -59,5 +84,6 @@ void ReadFile::work(std::string name, unsigned int coef)
     	_theFile.close();
         myFile.write (_theFileInChar, size);
     	delete[] _theFileInChar;
-	}	
+	}
+
 }

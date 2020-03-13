@@ -21,7 +21,7 @@ int	main(int ac, char **av)
   TestPXXL test;
   BMP bmp(64, 64);
   ReadFile rf;
-  int coefOfElargement = 3;
+  int coefOfElargement = 10;
 
   //std::cout << bmp << std::endl;  
   if (ac <= 1)
@@ -32,7 +32,14 @@ int	main(int ac, char **av)
   }
 
   rf.work(av[1], coefOfElargement);
- 
+  APicture *storedPict = rf.getThePictStored();
+  std::cout << "dans le main " << *storedPict << std::endl;
+  
+  CSV *csvObj = new CSV(*storedPict);
+  std::cout << "dans le main " << *csvObj << std::endl;
+
+  test.runTest();
+
   //bmp.createTheFile();
   //bmp.writeTheFile();
   return 0;

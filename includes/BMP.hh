@@ -35,7 +35,7 @@ class BMP : public APicture
 public:
 	BMP();
 	BMP(int w, int h);
-	BMP(const BMP &);
+	BMP(const APicture &);
 	~BMP();
 
 private:
