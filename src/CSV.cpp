@@ -2,7 +2,7 @@
 * @Author: Baptiste Bertrand-Rapello
 * @Date:   2020-03-11 16:51:17
 * @Last Modified by:   Baptiste Bertrand-Rapello
-* @Last Modified time: 2020-03-13 22:25:53
+* @Last Modified time: 2020-03-26 16:50:58
 */
 
 #include "../includes/CSV.hh"
@@ -45,10 +45,16 @@ void CSV::writeTheFile()
 	std::cout << "\x1B[35mDans la methode de CSV : writeTheFile\x1B[0m" << std::endl;
 }
 
+void CSV::getTheInformationOnFile() 
+{
+	
+}
+
 /*
 ** here where you collect the data from the file, 
 ** where you READ it
 */
+//cette methode est appelle au debut dans readfile
 void CSV::getThePicture(std::ifstream & inFile, unsigned int)
 {
 	int length = 25;
@@ -61,10 +67,39 @@ void CSV::getThePicture(std::ifstream & inFile, unsigned int)
 	std::cout << "\x1B[35mDans la methode de CSV : getThePicture\x1B[0m" << std::endl;
 	//std::cout << RED << "le buffer\n" << RST << buffer << std::endl;
 	std::cout << CYAN << "le une ligne\n" << RST << line << std::endl;
+	std::string splpitFirstLine = line.substr(line.find(';')+1);
+	std::cout << CYAN << "lla sub ligne\n" << RST << splpitFirstLine << std::endl;
+	// TODO HERE there is a check to do, a try to catch bacause if there is no AND at the end of the file
+	std::string infoCSV = splpitFirstLine.substr(0, splpitFirstLine.find("END")-1);
+	/*for the example it will give 4+24+8+3;
+		first : width
+		second : height
+		third : bit number
+		four : number of "case" (in excel) used for the data, so each number of pixel will be separate by ; : 255;255;255
+	*/ 
+	std::cout << YELLOW << "lla sub ligne\n" << RST << infoCSV << std::endl;
+	std::string temp = infoCSV;
+	std::cout << BKGBLUE << BRTWHITE << UNDERLINE << "Les infos du fichier CSV" << std::endl;
+	_width = std::stoi(temp.substr(0, temp.find('+')));
+	temp = temp.substr(temp.find('+')+1);
+	_height = std::stoi(temp.substr(0, temp.find('+')));
+	temp = temp.substr(temp.find('+')+1);
+	_bits = std::stoi(temp.substr(0, temp.find('+')));
+	temp = temp.substr(temp.find('+')+1);
+	_nbCases = std::stoi(temp.substr(0, temp.find('+')));
+
+	std::cout << "Width : " << _width << std::endl;
+	std::cout << "Height : " << _height << std::endl;
+	std::cout << "nb bits : " << _bits << std::endl;
+	std::cout << "nb case : " << _nbCases << std::endl;
+
+	std::cout << "temp : " << temp << std::endl;
+	std::cout << RST ;
+
 }
 
 // i think a previous version of getThePicture ^^
-void CSV::getPicture(char fileInCharTab, unsigned int)
+void CSV::getPicture(char * fileInCharTab, unsigned int)
 {
 	std::cout << "\x1B[35mDans la methode de CSV : getPicture\x1B[0m" << std::endl;
 }

@@ -38,7 +38,7 @@ int	main(int ac, char **av)
   CSV *csvObj = new CSV(*storedPict);
   std::cout << "dans le main " << *csvObj << std::endl;
 
-  test.runTest();
+  //test.runTest();
 
   //bmp.createTheFile();
   //bmp.writeTheFile();

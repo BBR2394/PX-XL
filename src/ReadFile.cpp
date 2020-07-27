@@ -32,6 +32,9 @@ int ReadFile::askTheFormat()
     if (input == "CSV") {
         _pict = new CSV;
     }
+    else if (input == "BMP") {
+        _pict = new BMP;
+    }
     else {
         std::cout << BLINK << BRTWHITE << BRTBKGRED << "!!!" << STOPBLINK <<  "unrecognized file format, it is going to crash :-/ " << RST << std::endl;
     }
@@ -41,14 +44,23 @@ int ReadFile::askTheFormat()
 
 void ReadFile::readTheFile(unsigned int coef)
 {
-    std::cout << "dans read teh file :\n ";
+    std::cout << "dans read the file :\n ";
     std::cout << "en char " << _theFileInChar[0] << " en unsigned char " << (unsigned char)_theFileInChar[0] << " en int : " << (int)_theFileInChar[0] << std::endl;
     std::cout << "en char " << _theFileInChar[1] << " en unsigned char " << (unsigned char)_theFileInChar[1] << " en int : " << (int)_theFileInChar[1] << std::endl;
     std::cout << "en char " << _theFileInChar[2] << " en unsigned char " << (unsigned char)_theFileInChar[2] << " en int : " << (int)_theFileInChar[2] << std::endl;
     std::cout << "en char " << _theFileInChar[3] << " en unsigned char " << (unsigned char)_theFileInChar[3] << " en int : " << (int)_theFileInChar[3] << std::endl;
-
+    
+    std::string magicNumbrChar = "";
+    magicNumbrChar += _theFileInChar[0];
+    magicNumbrChar += _theFileInChar[1];
+    magicNumbrChar += _theFileInChar[2];
+    std::cout << WHITE << "le magic number en char " << magicNumbrChar << std::endl;
     if (_theFileInChar[0] == 0x42 && _theFileInChar[1] == 0x4D)
         _pict = new BMP;
+    else if (magicNumbrChar.compare("CSV") == 0) {
+        std::cout << MAGENTA << "c'est du csv !" << std::endl;
+        _pict = new CSV;
+    }
     else
     {
         std::cout << BLINK << BRTWHITE << BRTBKGRED << "!!!" << STOPBLINK <<  "il y a eu un probleme lors de la lecture du magic number et ca risque de planter " << RST << std::endl;

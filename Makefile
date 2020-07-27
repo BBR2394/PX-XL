@@ -6,6 +6,7 @@ CXXFLAGS	=	-std=c++11	\
 SRC	=	src/main.cpp			\
 		src/Test.cpp			\
 		src/ReadFile.cpp		\
+		src/ProcessPicture.cpp	\
 		src/APicture.cpp		\
 		src/BMP.cpp			\
 		src/CSV.cpp			\

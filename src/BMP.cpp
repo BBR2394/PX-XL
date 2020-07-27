@@ -146,6 +146,7 @@ static unsigned char *convertFileData(char *tab)
 
 void BMP::getPicture(char *fileInCharTab, unsigned int coef)
 {
+	/* i dont know any more what it is for */
 	// unsigned char *tabcpy;
 	// convertFileData(fileInCharTab);
 	// tabcpy = new unsigned char;

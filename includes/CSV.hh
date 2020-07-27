@@ -13,6 +13,10 @@ public:
 
 private:
 	int _test;
+	int _nbCases;
+	//bits : to put after in APicture
+	int _bits;
+	void getTheInformationOnFile();
 
 public:
 	void createTheFile();
