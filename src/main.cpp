@@ -15,6 +15,7 @@
 #include "../includes/BMP.hh"
 #include "../includes/CSV.hh"
 #include "../includes/Test.hh"
+#include "../includes/ProcessPicture.hpp"
 
 int	main(int ac, char **av)
 {
@@ -42,5 +43,7 @@ int	main(int ac, char **av)
 
   //bmp.createTheFile();
   //bmp.writeTheFile();
+  ProcessPicture procPict;
+  procPict.processThePicture();
   return 0;
 }
