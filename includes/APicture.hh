@@ -47,6 +47,7 @@ public:
   int getWidth() const;
   int getHeight() const;
   FORMAT getFileFormat() const;
+  std::string getFileName() const;
 
   virtual void createTheFile() = 0;
   virtual void writeTheFile() = 0;

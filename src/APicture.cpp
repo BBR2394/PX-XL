@@ -10,12 +10,12 @@
 
 #include "../includes/APicture.hh"
 
-APicture::APicture() : _width(-1), _height(-1), _fileFormat(eNOFORMAT)
+APicture::APicture() : _width(-1), _height(-1), _fileFormat(eNOFORMAT), _fileName("")
 {
-
+	std::cout << "APicture Constructor" << std::endl;
 }
 
-APicture::APicture(int w, int h , FORMAT ff) : _width(w), _height(h), _fileFormat(ff)
+APicture::APicture(int w, int h , FORMAT ff) : _width(w), _height(h), _fileFormat(ff), _fileName("")
 {
 }
 
@@ -24,6 +24,7 @@ APicture::APicture(const APicture &dd)
 	_width = dd._width;
 	_height = dd._height;
 	_fileFormat = dd._fileFormat;
+	_fileName = dd._fileName;
 }
 
 APicture::~APicture()
@@ -82,5 +83,11 @@ std::ostream & operator<<(std::ostream & os, APicture const & pict)
 		os << YELLOW << "CSV" << RST;
 	else
 		os << "\x1B[41m\x1B[97m\x1B[05m!!!\x1B[25mUNDEFINED FORMAT SOMETHING IS MISSING\x1B[0m";
+	if (pict.getFileName() == "") {
+		os << "No filename defined";
+	} else {
+		os << "file name output = " << pict.getFileName();
+	}
+
 	return os;
 }

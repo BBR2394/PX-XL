@@ -1,0 +1,5 @@
+# ici tout ce que je ne veux pas 
+*.o
+PX-XL
+.vscode/
+.idea/

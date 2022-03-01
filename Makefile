@@ -10,7 +10,8 @@ SRC	=	src/main.cpp			\
 		src/APicture.cpp		\
 		src/BMP.cpp			\
 		src/CSV.cpp			\
-		src/Pixel.cpp
+		src/Pixel.cpp		\
+		src/PNG_sys.cpp
 
 OBJ	=	$(SRC:.cpp=.o)
 

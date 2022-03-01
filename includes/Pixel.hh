@@ -2,6 +2,8 @@
 #ifndef PIXEL_HH_
 # define PIXEL_HH_
 
+#include <list>
+
 class Pixel
 {
 public:
@@ -23,6 +25,7 @@ public:
 	unsigned char getGreen() const; 
 	unsigned char getBlue() const; 
 	unsigned char getAlpha() const; 
+	std::list<Pixel*> multiplePixel(int);
 };
 
 #endif

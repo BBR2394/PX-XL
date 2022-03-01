@@ -1,12 +1,17 @@
+/**
+ * Créé il y a fort longtemps
+ * 
+ */
+
 #ifndef PNG_HH_
 # define PNG_HH_
 
 #include <cstdint>
-#include <png.h>
+//#include <png.h>
 
 #include "APicture.hh"
 
-class PNG : public Picture
+class PNG : public APicture
 {
 public:
 	PNG();
