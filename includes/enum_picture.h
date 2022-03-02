@@ -7,6 +7,8 @@ enum FORMAT
     eNOFORMAT,
     eBMP,
     eTIFF,
+    ePNG,
+    ePNGsys,
     eCSV
 };
 

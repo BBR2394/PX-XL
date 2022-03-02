@@ -20,11 +20,11 @@ class PNG_SYS : public APicture
         int _c;
 
     public:
-        void createTheFile() = 0;
-        void writeTheFile() = 0;
-        void getThePicture(std::ifstream &, unsigned int) = 0;
-        void getPicture(char *, unsigned int) = 0;
-        void setDataFromFile(unsigned int) = 0;
+        void createTheFile();
+        void writeTheFile();
+        void getThePicture(std::ifstream &, unsigned int);
+        void getPicture(char *, unsigned int);
+        void setDataFromFile(unsigned int);
 
 
 };
