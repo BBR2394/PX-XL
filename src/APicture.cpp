@@ -70,6 +70,10 @@ APicture &APicture::operator=(APicture const & dd)
 	return *this;
 }
 
+std::string APicture::getFileName() const {
+	return this->_fileName;
+}
+
 std::ostream & operator<<(std::ostream & os, APicture const & pict)
 {
 	os << "APicture : \n\twidth -> " << pict.getWidth() << "\n\tHeight -> " << pict.getHeight() << "\n\tFile Fomat -> ";
@@ -83,11 +87,11 @@ std::ostream & operator<<(std::ostream & os, APicture const & pict)
 		os << YELLOW << "CSV" << RST;
 	else
 		os << "\x1B[41m\x1B[97m\x1B[05m!!!\x1B[25mUNDEFINED FORMAT SOMETHING IS MISSING\x1B[0m";
+	os << std::endl;
 	if (pict.getFileName() == "") {
 		os << "No filename defined";
 	} else {
 		os << "file name output = " << pict.getFileName();
 	}
-
 	return os;
 }

@@ -55,8 +55,10 @@ void ReadFile::readTheFile(unsigned int coef)
     magicNumbrChar += _theFileInChar[1];
     magicNumbrChar += _theFileInChar[2];
     std::cout << WHITE << "le magic number en char " << magicNumbrChar << std::endl;
-    if (_theFileInChar[0] == 0x42 && _theFileInChar[1] == 0x4D)
+    if (_theFileInChar[0] == 0x42 && _theFileInChar[1] == 0x4D) {
+        std::cout << "c'est du bmp" << std::endl;
         _pict = new BMP;
+    }
     else if (magicNumbrChar.compare("CSV") == 0) {
         std::cout << MAGENTA << "c'est du csv !" << std::endl;
         _pict = new CSV;

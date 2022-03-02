@@ -2,7 +2,10 @@
 #ifndef PIXEL_HH_
 # define PIXEL_HH_
 
+#include <iostream>
 #include <list>
+
+# include "color_term_macro.h"
 
 class Pixel
 {
@@ -27,5 +30,8 @@ public:
 	unsigned char getAlpha() const; 
 	std::list<Pixel*> multiplePixel(int);
 };
+
+std::ostream& operator<<(std::ostream &, Pixel const &);
+
 
 #endif

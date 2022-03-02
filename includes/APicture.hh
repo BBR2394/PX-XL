@@ -56,6 +56,6 @@ public:
   virtual void setDataFromFile(unsigned int) = 0;
 };
   
-std::ostream& operator<<(std::ostream&, APicture const &);
+std::ostream& operator<<(std::ostream &, APicture const &);
 
 #endif

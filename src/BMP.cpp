@@ -1,3 +1,10 @@
+/**
+ * Fichier créé il y a fort longtemps 
+ * Par Baptiste BERTRANd-RAPELLO
+ * */
+
+#include <chrono>
+#include <thread>
 
 #include "../includes/BMP.hh"
 
@@ -109,8 +116,12 @@ void BMP::getThePicture(std::ifstream &theFile, unsigned int coef)
 	theFile.read((char*)&_bmpInfoHeader, sizeof(t_bmp_info_header));
 
 	setDataFromFile(coef);
-
+	std::cout << "avant la lecture" << std::endl;
+	std::cout << *this << std::endl;
+	std::cout << "width " << _bmpInfoHeader.width << " height " << _bmpInfoHeader.height << std::endl;
 	/* attention ne gere pas le 32bits 64 bits */
+	std::cout << "c ?? " << c << std::endl;
+	c = 0;
 	while (c < _bmpInfoHeader.width * _bmpInfoHeader.height)
 		{
 			theFile.read((char*)&color, sizeof(char));
@@ -129,6 +140,8 @@ void BMP::getThePicture(std::ifstream &theFile, unsigned int coef)
 			//	pix->setAlpha(0);
 			_thePixels.push_back(pix);
 			c += 1;
+			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+			std::cout << "ici" << *pix << std::endl;
 		}
 	std::cout << "la liste a une taille de : " << _thePixels.size() << " et le c : " << c  << std::endl;
 	//up 2020-03-13 c'est juste pour tester ce que je lie est bien et c'est bon 

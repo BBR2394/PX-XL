@@ -57,3 +57,9 @@ std::list<Pixel*>	Pixel::multiplePixel(int coef)
 	std::list<Pixel*> lst;
 	return lst;
 }
+
+std::ostream& operator<<(std::ostream & os, Pixel const & pxl) {
+	os << "Le piXel est composé de :\n";
+	os << RED << (int)pxl.getRed() << GREEN << (int)pxl.getGreen() << BLUE << (int)pxl.getBlue() << RST << (int)pxl.getAlpha();
+	return os;
+}
