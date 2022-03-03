@@ -51,7 +51,7 @@ unsigned char Pixel::getAlpha() const
 	return _alpha;
 }
 
-// 21 04 21 faut crer un constructeur par copy pour pixel
+// 21 04 21 faut creer un constructeur par copy pour pixel
 std::list<Pixel*>	Pixel::multiplePixel(int coef)
 {
 	std::list<Pixel*> lst;

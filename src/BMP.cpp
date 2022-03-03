@@ -140,7 +140,7 @@ void BMP::getThePicture(std::ifstream &theFile, unsigned int coef)
 			//	pix->setAlpha(0);
 			_thePixels.push_back(pix);
 			c += 1;
-			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+			std::this_thread::sleep_for(std::chrono::milliseconds(10));
 			std::cout << "ici" << *pix << std::endl;
 		}
 	std::cout << "la liste a une taille de : " << _thePixels.size() << " et le c : " << c  << std::endl;
